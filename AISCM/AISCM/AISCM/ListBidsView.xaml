@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AISCM.ListBidsView">
+    <ContentPage.Content>
+
+        <ListView  x:Name="lstView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="LightGray">
+
+                            <StackLayout Orientation="Vertical">
+                                <Label x:Name="Bid" Text="{Binding BidID}"  IsVisible="False"/>
+                                <Button Text = "{Binding Name}" Command="{Binding BidParameterCommand}" CommandParameter="{Binding Source={x:Reference Bid}, Path=Text}" FontSize="14" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
+
+                            </StackLayout>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
